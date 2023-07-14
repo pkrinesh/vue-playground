@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AgGridDemo from './pages/ag-grid-page.vue'
+</script>
 
 <template>
-	<h1>Hi, There!</h1>
+	<AgGridDemo />
 </template>
 
 <style scoped></style>
