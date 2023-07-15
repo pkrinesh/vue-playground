@@ -1,9 +1,12 @@
-<script setup lang="ts">
-import AgGridDemo from './pages/ag-grid-page.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-	<AgGridDemo />
+	<h1 class="heading">Personal Vue Playground</h1>
 </template>
 
-<style scoped></style>
+<style scoped>
+.heading {
+	margin-top: 2rem;
+	text-align: center;
+}
+</style>
