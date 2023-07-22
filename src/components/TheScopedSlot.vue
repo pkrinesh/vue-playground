@@ -10,12 +10,21 @@ const data = ref({
 })
 
 defineSlots<{
-	default: (props: { first_name: string; last_name: string; age: number }) => any
+	default: (props: {
+		first_name: string
+		last_name: string
+		age: number
+		onIncreaseAge: () => void
+	}) => any
 }>()
+
+const increaseAge = () => {
+	data.value.age++
+}
 </script>
 
 <template>
 	<div>
-		<slot v-bind="data"></slot>
+		<slot v-bind="{ ...data, onIncreaseAge: increaseAge }"></slot>
 	</div>
 </template>

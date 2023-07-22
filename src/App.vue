@@ -10,11 +10,13 @@ const data = ref<TNameProps>({ name: 'Krinesh', age: 27 })
 <template>
 	<main>
 		<h1 class="heading">Personal Vue Playground</h1>
-		<p>{{ data.name }} {{ data.age }}</p>
-		<TheName :name="'Krupa'" :age="26" />
+		<!-- <p>{{ data.name }} {{ data.age }}</p> -->
+		<TheName v-bind="data" />
+		<TheName v-bind="{ name: 'Krupa', age: 27, address: '' }" />
 		<TheScopedSlot>
-			<template #default="{ first_name, last_name, age }">
-				<p>{{ first_name }} {{ last_name }} age: {{ age }}</p>
+			<template #default="props">
+				<p>{{ props.first_name }} {{ props.last_name }} {{ props.age }}</p>
+				<button @click="props.onIncreaseAge">Add to Age</button>
 			</template>
 		</TheScopedSlot>
 	</main>
